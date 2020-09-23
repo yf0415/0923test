@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500&display=swap');
+
+*{
+    box-sizing:border-box;
+    font-family: 'Poppins', sans-serif;
+}
+html,body{
+    margin:0;
+    height:100%;
+    overflow:hidden;
+    padding:0;
+}
+ul,li,h1,h2,a,p{
+    margin:0;
+    margin:0;
+}
+
+article{
+    width:100%;    
+    height:100%;
+}
+article:after{
+    content:'';
+    display:block;
+    clear:both;
+}
+
+/*leftpage*/
+.page_left{
+    width:30%;
+    height:100%;
+    float:left;
+}
+.page_left h2{
+    font-size:1.8em;
+    padding:8% 0 25% 8%;
+}
+.page_left p{
+    position:relative;
+    display:block;
+    font-size:1.5em;
+    padding-left:8%;
+}
+.page_left p:after{
+    content: '';
+    display:block;
+    height:150px;
+    width:0px;
+    border:1px solid #ddd;
+    background:#ddd;
+    margin-top:5px;
+}
+.page_left p:before{
+    content: '';
+    display:block;
+    height:150px;
+    width:0px;
+    border:1px solid #ddd;
+    background:#ddd;
+    margin-bottom:5px;
+}
+
+/*rightpage*/
+
+.page_right{
+    width:70%;
+    height:100%;
+    float:right;
+    background:#ffc000;
+}
+
+/*header*/
+.page_right header{
+    display:flex;
+    justify-content: flex-end;
+    width:100%;
+    padding:4%;
+}
+
+/*menu-trigger*/
+.page_right header .menu_btn, .page_right header .menu_btn span{
+    display:inline-block;
+    transition:all .4s;
+}
+
+.page_right header .menu_btn{
+    position:relative;
+    width:30px;
+    height:45px;
+}
+.page_right header .menu_btn span{
+    position:absolute;
+    right:0;
+    width:100%;
+    height:3px;
+    background-color:#fff;
+}
+
+.page_right header .menu_btn span:nth-of-type(1){
+    top:0;
+}
+.page_right header .menu_btn span:nth-of-type(2){
+    top:10px;
+}
+.page_right header .menu_btn span:nth-of-type(3){
+    top:20px;
+}
+
+/*menu-active*/
+.page_right header nav{
+    display:none;
+}
+.page_right header nav a{
+    text-decoration: none;
+    font-weight:500;
+    padding-right:40px;
+    color:#fff;
+}
+
+.page_right header.active nav{
+    display:block;
+}
+
+.page_right header .menu_btn.active span:nth-of-type(1){
+    transform:translateY(10px)rotate(45deg);
+}
+.page_right header .menu_btn.active span:nth-of-type(2){
+    opacity: 0
+}
+.page_right header .menu_btn.active span:nth-of-type(3){
+    transform:translateY(-10px)rotate(-45deg);
+}
+
+
+
+/*main img*/
+.page_right .main_img{
+    width:100%;
+    position:relative;
+    
+    
+    animation-duration: 1s;
+    animation-name: ani;
+}
+.page_right .main_img img{
+    width:35%;
+    position:absolute;
+    left:-22%; top:50px;
+}
+
+/*img ani*/
+
+@keyframes ani{
+    from{
+        transform:translateX(-100%);
+        width:100%;
+    }
+    to{
+        margin-right:0%;
+        width:100%;
+    }
+}
+
+/*aside*/
+.page_right .sub_point{
+    position:relative;
+}
+.page_right .sub_point span{
+    position:absolute;
+    width:15px; height:15px;
+    border:1px solid #fff;
+    border-radius: 80%;
+}
+
+.page_right .sub_point span:nth-of-type(1){
+    position:absolute;
+    right:5%; top:200px;
+    transform: translate(-5%,-40%);
+    background:#fff;
+}
+.page_right .sub_point span:nth-of-type(2){
+    position:absolute;
+    right:5%; top:240px;
+}
+.page_right .sub_point span:nth-of-type(3){
+    position:absolute;
+    right:5%; top:280px;
+}
+
+/*main*/
+.page_right .main_sub{    
+    width:100%;
+    white-space:pre-line;
+    color:#fff;
+    padding:10% 18%;
+    
+}
+.page_right .main_sub h1{
+    font-size:3em;
+    
+    animation-duration: 1s;
+    animation-name: ani2;
+}
+.page_right .main_sub p{
+    font-size:1.2em;
+    font-weight:500;
+    
+    animation-duration: 1.2s;
+    animation-name: ani3;
+}
+.page_right .main_sub span{
+    width:100%;
+    padding:5% 2%;
+}
+
+/*ani*/
+@keyframes ani2{
+    from{
+        margin-left:100%;
+        width:300%;
+    }
+    to{
+        margin-left:0%;
+        width:100%;
+    }
+}
+
+@keyframes ani3{
+    from{
+        margin-left:100%;
+        width:300%;
+    }
+    to{
+        margin-left:0%;
+        width:100%;
+    }
+}
+
+
+/*icon*/
+.page_right footer{
+    text-align: right;
+    padding:0 10%;
+}
+.page_right footer img{
+    padding-right:20px;
+}
+
+/*popup*/
+.popup{
+    display:none;
+    z-index: 1;
+    position:absolute;
+    width:100%;
+    height: 100%;
+    background:rgba(0,0,0,0.5);
+}
+.popup.active{display:block;}
+.popup img{
+    width:600px;
+    position:absolute;
+    left:30%; top:200px;
+    z-index: 5;
+}
